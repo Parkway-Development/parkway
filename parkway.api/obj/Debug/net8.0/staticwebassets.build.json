@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "ROzunYN9m4wGqVotXOCqu5lWmVKmdFrO9TD8xpUQcWs=",
+  "Hash": "Jqgu7wV9AAbaqlrnEAI7rDDw2DoGNwgpYgis1KLbfdI=",
   "Source": "parkway.api",
   "BasePath": "_content/parkway.api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

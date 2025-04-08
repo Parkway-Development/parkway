@@ -1,6 +1,5 @@
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/bin/Debug/net8.0/appsettings.Development.json
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/bin/Debug/net8.0/appsettings.json
-/Volumes/HomeX/Users/jay/Code/parkway/parkway.api/bin/Debug/net8.0/parkway.api.staticwebassets.endpoints.json
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/bin/Debug/net8.0/parkway.api
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/bin/Debug/net8.0/parkway.api.deps.json
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/bin/Debug/net8.0/parkway.api.runtimeconfig.json
@@ -54,9 +53,7 @@
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/scopedcss/bundle/parkway.api.styles.css
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/staticwebassets.build.json
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/staticwebassets.development.json
-/Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/staticwebassets.build.endpoints.json
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/staticwebassets/msbuild.parkway.api.Microsoft.AspNetCore.StaticWebAssets.props
-/Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/staticwebassets/msbuild.parkway.api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/staticwebassets/msbuild.build.parkway.api.props
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.parkway.api.props
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.parkway.api.props
@@ -67,3 +64,5 @@
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/parkway.api.pdb
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/parkway.api.genruntimeconfig.cache
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/ref/parkway.api.dll
+/Volumes/HomeX/Users/jay/Code/parkway/parkway.api/bin/Debug/net8.0/global.json
+/Volumes/HomeX/Users/jay/Code/parkway/parkway.api/bin/Debug/net8.0/Microsoft.Bcl.Memory.dll
