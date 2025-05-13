@@ -19,12 +19,15 @@ jobs:
 
       - name: Login to Pulumi
         run: pulumi login
+        working-directory: ./pulumi
 
       - name: Set up environment
         run: pulumi stack select parkway-org/parkway/parkway-dev
+        working-directory: ./pulumi
 
       - name: Deploy dev infrastructure
         run: pulumi up --yes
+        working-directory: ./pulumi
 
   request-prod-approval:
     needs: deploy-dev
@@ -58,9 +61,12 @@ jobs:
 
       - name: Login to Pulumi
         run: pulumi login
+        working-directory: ./pulumi
 
       - name: Set up environment
         run: pulumi stack select parkway-org/parkway/parkway-prod
+        working-directory: ./pulumi
 
       - name: Deploy prod infrastructure
         run: pulumi up --yes
+        working-directory: ./pulumi
