@@ -1,0 +1,62 @@
+name: Deploy Infrastructure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Pulumi
+        uses: pulumi/actions@v4
+
+      - name: Login to Pulumi
+        run: pulumi login
+
+      - name: Set up environment
+        run: pulumi stack select parkway-dev
+
+      - name: Deploy dev infrastructure
+        run: pulumi up --yes
+
+  request-prod-approval:
+    needs: deploy-dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Teams for approval
+        run: |
+          curl -X POST ${{ secrets.TEAMS_WEBHOOK_URL }} \
+            -H "Content-Type: application/json" \
+            -d '{
+                  "text": "⚠️ Approval required: A deployment to *production* is ready. Please approve via GitHub Actions."
+                }'
+
+  deploy-prod:
+    needs: request-prod-approval
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://portal.azure.com/
+    steps:
+      - name: Wait for manual approval
+        uses: hmarr/auto-approve-action@v2.1.0
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Pulumi
+        uses: pulumi/actions@v4
+
+      - name: Login to Pulumi
+        run: pulumi login
+
+      - name: Set up environment
+        run: pulumi stack select parkway-prod
+
+      - name: Deploy prod infrastructure
+        run: pulumi up --yes

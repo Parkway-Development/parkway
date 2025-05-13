@@ -1,0 +1,44 @@
+name: Pulumi Deploy (Dev)
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  up:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.x'
+
+      - name: Setup Pulumi
+        uses: pulumi/actions@v4
+
+      - name: Login to Pulumi
+        run: pulumi login --cloud-url "file://~/.pulumi-local"
+
+      - name: Set stack
+        run: pulumi stack select parkway-dev
+
+      - name: Set config values
+        run: |
+          pulumi config set location centralus --stack parkway-dev
+          pulumi config set resourcePrefix parkway-dev --stack parkway-dev
+          pulumi config set sqlAdminUsername sqladmin --stack parkway-dev
+          pulumi config set sqlAdminPassword ${{ secrets.SQL_ADMIN_PASSWORD }} --secret --stack parkway-dev
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Build Pulumi project
+        run: dotnet build
+
+      - name: Preview and deploy
+        run: pulumi up --yes --stack parkway-dev
