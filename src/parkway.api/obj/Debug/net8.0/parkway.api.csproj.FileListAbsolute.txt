@@ -74,3 +74,14 @@
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/parkway.api.pdb
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/parkway.api.genruntimeconfig.cache
 /Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/Debug/net8.0/ref/parkway.api.dll
+/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/Debug/net8.0/parkway.api.csproj.AssemblyReference.cache
+/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/Debug/net8.0/parkway.api.GeneratedMSBuildEditorConfig.editorconfig
+/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/Debug/net8.0/parkway.api.AssemblyInfoInputs.cache
+/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/Debug/net8.0/parkway.api.AssemblyInfo.cs
+/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/Debug/net8.0/parkway.api.csproj.CoreCompileInputs.cache
+/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/Debug/net8.0/parkway.api.MvcApplicationPartsAssemblyInfo.cs
+/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/Debug/net8.0/parkway.api.MvcApplicationPartsAssemblyInfo.cache
+/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/Debug/net8.0/parkway.api.sourcelink.json
+/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/Debug/net8.0/parkway.api.dll
+/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/Debug/net8.0/refint/parkway.api.dll
+/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/Debug/net8.0/parkway.api.pdb

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("parkway.api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c39f54da39f67a4d211deac0217774e9eb6c3d69")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce456956652c718edd2b6ceb9291f490c5c4e725")]
 [assembly: System.Reflection.AssemblyProductAttribute("parkway.api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("parkway.api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

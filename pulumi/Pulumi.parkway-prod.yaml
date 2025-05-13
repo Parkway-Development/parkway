@@ -1,0 +1,9 @@
+config:
+  azure-native:location: centralus
+  project:resourcePrefix: parkway-prod
+  parkway:resourcePrefix: parkway-prod
+  parkway:location: centralus
+  parkway:sqlAdminUsername:
+    secure: AAABAFOwWUCpclsVDqSeL6FLTtdr0V2HXBE6XciNTSRcs+DKaE60mA==
+  parkway:sqlAdminPassword:
+    secure: AAABAP5SEMVXvxTgVX7IXOBC+9YTuEsdE+93LOBfhThUg4sFOQO7T+21ZcbhLRm15HP/Lg==

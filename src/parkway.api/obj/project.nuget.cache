@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "y6q1LQAG/rs=",
+  "dgSpecHash": "7R6CMoAok2Q=",
   "success": true,
-  "projectFilePath": "/Volumes/HomeX/Users/jay/Code/parkway/parkway.api/parkway.api.csproj",
+  "projectFilePath": "/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/parkway.api.csproj",
   "expectedPackageFiles": [
     "/Volumes/HomeX/Users/jay/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Volumes/HomeX/Users/jay/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",

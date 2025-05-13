@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Volumes/HomeX/Users/jay/Code/parkway/parkway.api/parkway.api.csproj": {}
+    "/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/parkway.api.csproj": {}
   },
   "projects": {
-    "/Volumes/HomeX/Users/jay/Code/parkway/parkway.api/parkway.api.csproj": {
+    "/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/parkway.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Volumes/HomeX/Users/jay/Code/parkway/parkway.api/parkway.api.csproj",
+        "projectUniqueName": "/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/parkway.api.csproj",
         "projectName": "parkway.api",
-        "projectPath": "/Volumes/HomeX/Users/jay/Code/parkway/parkway.api/parkway.api.csproj",
+        "projectPath": "/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/parkway.api.csproj",
         "packagesPath": "/Volumes/HomeX/Users/jay/.nuget/packages/",
-        "outputPath": "/Volumes/HomeX/Users/jay/Code/parkway/parkway.api/obj/",
+        "outputPath": "/Volumes/HomeX/Users/jay/Code/parkway/src/parkway.api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Volumes/HomeX/Users/jay/.nuget/NuGet/NuGet.Config"
@@ -37,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -94,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,1 +1,7 @@
-parkway.api/notes.txt
+notes.txt
+infra/terraform.tfvars
+terraform.tfvars
+.terraform/
+.terraform.lock.hcl
+
+scripts/terraform-sp.json
