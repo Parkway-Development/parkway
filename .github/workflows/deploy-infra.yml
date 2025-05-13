@@ -14,6 +14,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Install Pulumi
         uses: pulumi/actions@v4
 
@@ -21,7 +26,7 @@ jobs:
         run: pulumi login
         working-directory: ./pulumi
 
-      - name: Set up environment
+      - name: Select dev stack
         run: pulumi stack select parkway-org/parkway/parkway-dev
         working-directory: ./pulumi
 
@@ -56,17 +61,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Install Pulumi
         uses: pulumi/actions@v4
 
       - name: Login to Pulumi
         run: pulumi login
-        working-directory: ./pulumi
-
-      - name: Set up environment
-        run: pulumi stack select parkway-org/parkway/parkway-prod
-        working-directory: ./pulumi
-
-      - name: Deploy prod infrastructure
-        run: pulumi up --yes
-        working-directory: ./pulumi
+        working-directory: ./
