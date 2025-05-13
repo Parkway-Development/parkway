@@ -21,7 +21,7 @@ jobs:
         run: pulumi login
 
       - name: Set up environment
-        run: pulumi stack select parkway-dev
+        run: pulumi stack select parkway-org/parkway/parkway-dev
 
       - name: Deploy dev infrastructure
         run: pulumi up --yes
@@ -60,7 +60,7 @@ jobs:
         run: pulumi login
 
       - name: Set up environment
-        run: pulumi stack select parkway-prod
+        run: pulumi stack select parkway-org/parkway/parkway-prod
 
       - name: Deploy prod infrastructure
         run: pulumi up --yes
