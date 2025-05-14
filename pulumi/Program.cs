@@ -1,4 +1,5 @@
-﻿using Pulumi;
+﻿using System;
+using Pulumi;
 using Pulumi.AzureNative.Resources;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Inputs;
