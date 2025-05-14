@@ -97,7 +97,7 @@ return await Pulumi.Deployment.RunAsync(() =>
     });
 
     // Build the SQL connection string dynamically
-    var sqlConnectionString = Output.Tuple(
+    var sqlConnectionString = Output.Tuple<string, string, string>(
         sqlServer.Name,
         sqlAdminUsername,
         sqlAdminPassword
@@ -148,7 +148,7 @@ return await Pulumi.Deployment.RunAsync(() =>
         },
         Identity = new ManagedClusterIdentityArgs
         {
-            Type = ResourceIdentityType.SystemAssigned
+            Type = Pulumi.AzureNative.ContainerService.ResourceIdentityType.SystemAssigned
         },
     });
 
