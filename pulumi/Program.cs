@@ -19,7 +19,8 @@ return await Pulumi.Deployment.RunAsync(() =>
     var resourcePrefix = config.Require("resourcePrefix");
 
     var tenantId = Environment.GetEnvironmentVariable("ARM_TENANT_ID") ?? throw new ArgumentNullException("ARM_TENANT_ID");
-    var objectId = Environment.GetEnvironmentVariable("ARM_CLIENT_OBJECT_ID") ?? throw new ArgumentNullException("ARM_CLIENT_OBJECT_ID");
+    // var objectId = Environment.GetEnvironmentVariable("ARM_CLIENT_OBJECT_ID") ?? throw new ArgumentNullException("ARM_CLIENT_OBJECT_ID");
+    var objectId = config.Require("clientObjectId");
 
     // Create the Azure Resource Group
     var resourceGroup = new ResourceGroup($"{resourcePrefix}-rg", new ResourceGroupArgs

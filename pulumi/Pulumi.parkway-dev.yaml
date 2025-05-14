@@ -10,3 +10,5 @@ config:
   parkway:sqlConnectionString:
     secure: AAABALQItkoXnhHJC+ULHOzBIMKVrsfUABU0/RrfB41k3Tdh3w+eNOGAEVxgLIVmXXNSKt2A2fYEsN6o+xXt5IIN3vzAmcuj975CBhP0G+2czuiPaLCnc42TBz+86jT/sMhgFFYw1qv+nlIIvqABQp2pdXTVQPPukn9qUCSOv108917h9TDXWGzWDyDPSysg4GaNW8QrOFqCUEoCKsCzsEORsMeQRc14baThdR0wBVWLgrTFmufFFU0iYXVpEhkhLe9WWk2xEIHxBYqUrOu4Hydm83R2dUZGEhHH3BOp4MGY9tf9RB4+ovuWefCEg5BNJw5XjGGWsTAxfLt8GrrkL/IG0VpSlymySudiU6QBQhUR9WzCkvUJoEzHaDpvjp/vPF/qDGtsow==
   parkway:tenantId: 39da50a5-01f5-40e9-bfbb-fd9e12f82313
+  parkway:clientObjectId:
+    secure: AAABAE5mTXWlXx4DSr/YkhcfubG+Plw/jvSZ11dGfIKBjBtHtC0mLw2IZXf2MrXVKXeNDGpu1ANGc+W4sYXjqW73ouk=

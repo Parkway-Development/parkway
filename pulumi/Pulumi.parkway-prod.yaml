@@ -8,3 +8,5 @@ config:
   parkway:sqlAdminPassword:
     secure: AAABAP5SEMVXvxTgVX7IXOBC+9YTuEsdE+93LOBfhThUg4sFOQO7T+21ZcbhLRm15HP/Lg==
   parkway:tenantId: 39da50a5-01f5-40e9-bfbb-fd9e12f82313
+  parkway:clientObjectId:
+    secure: AAABAMQtpy5tS9aehBpYnqSUSyHRqhsei3x0VTDgAhUORgTvP4BujIc5zfDTf6UHav6KEgvmMekOQV1O49nR+bhJZK8=
