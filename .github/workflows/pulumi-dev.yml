@@ -5,6 +5,14 @@ on:
     branches:
       - dev
 
+env:
+  PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+  ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+  ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+  ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+  ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+  ARM_CLIENT_OBJECT_ID: ${{ secrets.ARM_CLIENT_OBJECT_ID }}
+
 jobs:
   up:
     runs-on: ubuntu-latest
@@ -22,10 +30,10 @@ jobs:
         uses: pulumi/actions@v4
 
       - name: Login to Pulumi
-        run: pulumi login --cloud-url "file://~/.pulumi-local"
+        run: pulumi login
 
       - name: Set stack
-        run: pulumi stack select parkway-dev
+        run: pulumi stack select parkway-org/parkway/parkway-dev
 
       - name: Set config values
         run: |
@@ -40,5 +48,5 @@ jobs:
       - name: Build Pulumi project
         run: dotnet build
 
-      - name: Preview and deploy
-        run: pulumi up --yes --stack parkway-dev
+      - name: Deploy infrastructure
+        run: pulumi up --yes
