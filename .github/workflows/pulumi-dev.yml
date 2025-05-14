@@ -41,6 +41,7 @@ jobs:
           pulumi config set resourcePrefix parkway-dev --stack parkway-dev
           pulumi config set sqlAdminUsername sqladmin --stack parkway-dev
           pulumi config set sqlAdminPassword ${{ secrets.SQL_ADMIN_PASSWORD }} --secret --stack parkway-dev
+          pulumi config set tenantId ${{ env.ARM_TENANT_ID }} --stack parkway-dev
 
       - name: Install dependencies
         run: dotnet restore
