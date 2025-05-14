@@ -3,7 +3,6 @@ using Pulumi;
 using Pulumi.AzureNative.Resources;
 using Pulumi.AzureNative.KeyVault;
 using Pulumi.AzureNative.KeyVault.Inputs;
-using Pulumi.AzureNative.Authorization;
 using Pulumi.AzureNative.Authorization.Inputs;
 using Pulumi.AzureNative.Sql;
 using Pulumi.AzureNative.Sql.Inputs;
@@ -13,19 +12,14 @@ using System.Collections.Generic;
 using KvSkuArgs = Pulumi.AzureNative.KeyVault.Inputs.SkuArgs;
 using SqlSkuArgs = Pulumi.AzureNative.Sql.Inputs.SkuArgs;
 
-return await Pulumi.Deployment.RunAsync(async () =>
+return await Pulumi.Deployment.RunAsync(() =>
 {
     var config = new Config();
     var location = config.Require("location");
     var resourcePrefix = config.Require("resourcePrefix");
-    var tenantId = config.Require("tenantId");
-    var objectId = config.Require("clientObjectId");
-    
-    var current = new
-    {
-        TenantId = Environment.GetEnvironmentVariable("ARM_TENANT_ID"),
-        ObjectId = Environment.GetEnvironmentVariable("ARM_CLIENT_OBJECT_ID")
-    };
+
+    var tenantId = Environment.GetEnvironmentVariable("ARM_TENANT_ID") ?? throw new ArgumentNullException("ARM_TENANT_ID");
+    var objectId = Environment.GetEnvironmentVariable("ARM_CLIENT_OBJECT_ID") ?? throw new ArgumentNullException("ARM_CLIENT_OBJECT_ID");
 
     // Create the Azure Resource Group
     var resourceGroup = new ResourceGroup($"{resourcePrefix}-rg", new ResourceGroupArgs
@@ -42,13 +36,13 @@ return await Pulumi.Deployment.RunAsync(async () =>
         ResourceGroupName = resourceGroup.Name,
         Properties = new VaultPropertiesArgs
         {
-            TenantId = current.TenantId,
+            TenantId = tenantId,
             Sku = new KvSkuArgs
             {
                 Family = "A",
                 Name = SkuName.Standard
             },
-            AccessPolicies = new InputList<AccessPolicyEntryArgs>
+            AccessPolicies =
             {
                 new AccessPolicyEntryArgs
                 {
@@ -103,10 +97,9 @@ return await Pulumi.Deployment.RunAsync(async () =>
     });
 
     // Build the SQL connection string dynamically
-    var sqlAdminUsernameInput = config.Require("sqlAdminUsername");
-    var sqlConnectionString = Output.Tuple<string, string, string>(
+    var sqlConnectionString = Output.Tuple(
         sqlServer.Name,
-        sqlAdminUsernameInput,
+        sqlAdminUsername,
         sqlAdminPassword
     ).Apply(values =>
     {
@@ -136,12 +129,13 @@ return await Pulumi.Deployment.RunAsync(async () =>
         Properties = new SecretPropertiesArgs { Value = sqlConnectionString }
     });
 
+    // AKS Cluster
     var aksCluster = new ManagedCluster($"{resourcePrefix}-aks", new ManagedClusterArgs
     {
         ResourceGroupName = resourceGroup.Name,
         Location = location,
         DnsPrefix = $"{resourcePrefix}-k8s",
-        AgentPoolProfiles = 
+        AgentPoolProfiles =
         {
             new ManagedClusterAgentPoolProfileArgs
             {
@@ -154,11 +148,9 @@ return await Pulumi.Deployment.RunAsync(async () =>
         },
         Identity = new ManagedClusterIdentityArgs
         {
-            Type = Pulumi.AzureNative.ContainerService.ResourceIdentityType.SystemAssigned
-
+            Type = ResourceIdentityType.SystemAssigned
         },
     });
-    
 
     // Export outputs
     return new Dictionary<string, object?>
