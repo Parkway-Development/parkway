@@ -21,8 +21,8 @@ return await Pulumi.Deployment.RunAsync(async () =>
 
     var current = new
     {
-        TenantId = Environment.GetEnvironmentVariable("ARM_TENANT_ID")!,
-        ObjectId = Environment.GetEnvironmentVariable("ARM_CLIENT_OBJECT_ID") ?? "",
+        TenantId = Environment.GetEnvironmentVariable("ARM_TENANT_ID"),
+        ObjectId = Environment.GetEnvironmentVariable("ARM_CLIENT_OBJECT_ID")
     };
 
     // Create the Azure Resource Group
