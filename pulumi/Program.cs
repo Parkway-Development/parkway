@@ -18,7 +18,9 @@ return await Pulumi.Deployment.RunAsync(async () =>
     var config = new Config();
     var location = config.Require("location");
     var resourcePrefix = config.Require("resourcePrefix");
-
+    var tenantId = config.Require("tenantId");
+    var objectId = config.Require("clientObjectId");
+    
     var current = new
     {
         TenantId = Environment.GetEnvironmentVariable("ARM_TENANT_ID"),
@@ -50,8 +52,8 @@ return await Pulumi.Deployment.RunAsync(async () =>
             {
                 new AccessPolicyEntryArgs
                 {
-                    TenantId = current.TenantId,
-                    ObjectId = current.ObjectId,
+                    TenantId = tenantId,
+                    ObjectId = objectId,
                     Permissions = new PermissionsArgs
                     {
                         Secrets = new InputList<Union<string, SecretPermissions>>
